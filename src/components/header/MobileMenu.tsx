@@ -9,7 +9,7 @@ export default function MobileMenu() {
     <PopoverPanel
       transition
       anchor="bottom"
-      className="flex w-full origin-top flex-col rounded-b-xl bg-white shadow-md transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0"
+      className="z-50 flex w-full origin-top flex-col rounded-b-xl bg-[#FAFAFA] shadow-md transition duration-200 ease-out data-[closed]:scale-95 data-[closed]:opacity-0"
     >
       <div className="p-6">
         <NavLinks className="flex w-full flex-col gap-3 text-sm font-light" />
