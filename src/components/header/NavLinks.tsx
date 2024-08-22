@@ -7,19 +7,19 @@ type Path = {
 const navItems: Array<Path> = [
   {
     id: "features",
-    path: "Features",
+    path: "features",
   },
   {
     id: "reviews",
-    path: "Reviews",
+    path: "reviews",
   },
   {
     id: "pricing",
-    path: "Pricing",
+    path: "pricing",
   },
   {
     id: "faqs",
-    path: "FAQs",
+    path: "faqs",
   },
 ];
 
