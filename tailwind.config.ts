@@ -20,7 +20,7 @@ const config: Config = {
       },
       animation: {
         "fade-in": "fade-in 0.3s linear forwards",
-        "vertical-loop": "vertical-loop 28s linear infinite",
+        "vertical-loop": "vertical-loop 26230ms linear infinite",
         "horizontal-loop": "horizontal-loop 30s linear infinite",
         "spin-slow": "spin-slow 5s linear infinite",
         "spin-reverse-slower": "spin-reverse-slower 5s linear infinite",
@@ -36,7 +36,7 @@ const config: Config = {
         },
         "vertical-loop": {
           "100%": {
-            transform: "translateY(-25%)",
+            transform: "translateY(-50%)",
           },
         },
         "horizontal-loop": {
