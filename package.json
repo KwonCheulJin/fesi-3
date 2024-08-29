@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.1.2",
+    "@nextui-org/input": "^2.2.4",
     "@nextui-org/react": "^2.4.6",
     "@nextui-org/select": "^2.2.5",
     "@nextui-org/system": "^2.2.5",
@@ -26,6 +27,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20",
     "@types/react": "^18",
