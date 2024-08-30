@@ -3,7 +3,6 @@ import "@testing-library/jest-dom";
 import { render, RenderOptions } from "@testing-library/react";
 import React from "react";
 import { SWRConfig } from "swr";
-// import Home from "../pages/courses";
 import "whatwg-fetch";
 
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {

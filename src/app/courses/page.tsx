@@ -25,13 +25,13 @@ function CourseList(props: { courses: Course[] }) {
     );
   }
   return (
-    <div className="mt-10 flex flex-col gap-5">
+    <ul className="mt-10 flex flex-col gap-5">
       {courses.map((course, index) => (
-        <div key={index}>
+        <li key={index} data-testid="course-info">
           <CourseInfo {...course} />
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 
