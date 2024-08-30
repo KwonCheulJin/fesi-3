@@ -1,6 +1,4 @@
-# Codeit - 실습(Pocket 클론)
-
-## 주소 단축 서비스
+# Codeit - 실습(Pocket 클론 / Front end Test)
 
 ## Tech Requirement (Tech Stack)
 
