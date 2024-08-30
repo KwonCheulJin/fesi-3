@@ -42,7 +42,7 @@ describe("Login", () => {
   });
 
   test("사용자가 입력한 값으로 로그인을 실패한다.", async () => {
-    mockedAxios.post.mockRejectedValueOnce(new Error("Invalid credentials"));
+    mockedAxios.post.mockRejectedValueOnce(new Error("Unauthorized"));
 
     render(<Login />);
 
@@ -54,6 +54,7 @@ describe("Login", () => {
     await userEvent.type(passwordInput, "password");
     await userEvent.click(button);
 
-    expect(screen.getByRole("alert")).toHaveTextContent("Invalid credentials");
+    expect(screen.getByRole("alert")).toHaveTextContent("Unauthorized");
+    expect(localStorage.getItem("token")).toBeNull();
   });
 });
