@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 
 const Button = (props: { onClick: () => void; text: string }) => {
@@ -7,12 +8,18 @@ const Button = (props: { onClick: () => void; text: string }) => {
 export default function Counter() {
   const [count, setCount] = useState(0);
   const [checked, setChecked] = useState(false);
-  const initialTitleRef = useRef(document.title);
+  const initialTitleRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      initialTitleRef.current = document.title;
+    }
+  }, []);
 
   useEffect(() => {
     document.title = checked
       ? `Total number of clicks: ${count}`
-      : initialTitleRef.current;
+      : initialTitleRef.current!;
   }, [checked, count]);
 
   return (

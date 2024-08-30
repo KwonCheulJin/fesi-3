@@ -1,5 +1,6 @@
 "use client";
 import Counter from "@/components/testing/Counter";
+import Login from "@/components/testing/Login";
 import MyInput from "@/components/testing/MyInput";
 import UpperInput from "@/components/testing/UpperInput";
 
@@ -22,6 +23,7 @@ export default function Testing() {
           className="max-w-xs"
         />
         <Counter />
+        <Login />
       </div>
     </section>
   );
