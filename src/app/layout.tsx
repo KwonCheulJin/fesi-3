@@ -1,5 +1,7 @@
 import Footer from "@/components/footer/Footer";
 import NavBar from "@/components/header/NavBar";
+import SWRConfigContext from "@/context/SWRConfigContext";
+import { NextUIProvider } from "@nextui-org/system";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -18,9 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <NavBar />
-        {children}
-        <Footer />
+        <SWRConfigContext>
+          <NextUIProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </NextUIProvider>
+        </SWRConfigContext>
       </body>
     </html>
   );
