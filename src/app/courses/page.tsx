@@ -51,7 +51,7 @@ export default function Home() {
   }));
 
   const { data, error, isLoading } = useSWR<Course[]>(
-    process.env.NEXT_PUBLIC_API_ENDPOINT,
+    "https://front-assignment.codeit.team/courses.json",
   );
   const filteredCourses = (data ?? [])
     .filter((c) => (courseType === "ALL" ? true : c.courseType === courseType))
