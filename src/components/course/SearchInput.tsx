@@ -20,6 +20,7 @@ export default function SearchInput(props: SearchInputProps) {
           classNames={{
             inputWrapper: ["border", "rounded-md", "min-h-12", "w-full"],
           }}
+          data-testid="search-input"
         />
       </div>
       <Button

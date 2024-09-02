@@ -28,6 +28,7 @@ export default function SelectBox(props: SelectBoxProps) {
       }}
       selectionMode="single"
       disallowEmptySelection
+      data-testid="select-box"
     >
       {items.map((item) => (
         <SelectItem key={item.key} showDivider hideSelectedIcon>
