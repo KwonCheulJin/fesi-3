@@ -1,5 +1,13 @@
+import { CourseType } from "@/models/course";
 import { Select, SelectItem } from "@nextui-org/react";
 import React from "react";
+
+export const courseTypeLabels: { [key in CourseType]: string } = {
+  LEGACY: "Legacy",
+  V1: "Version 1",
+  V2: "Version 2",
+  V3: "Version 3",
+};
 
 type Selectable = {
   key: string;

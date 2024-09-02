@@ -1,4 +1,4 @@
-import { courseTypeLabels } from "@/app/courses/page";
+import { courseTypeLabels } from "@/components/course/SelectBox";
 import { Course, CourseLanguage } from "@/models/course";
 
 import { Card, CardBody, Chip } from "@nextui-org/react";

@@ -1,19 +1,12 @@
 "use client";
 import CourseInfo from "@/components/course/CourseInfo";
 import SearchInput from "@/components/course/SearchInput";
-import SelectBox from "@/components/course/SelectBox";
+import SelectBox, { courseTypeLabels } from "@/components/course/SelectBox";
 import { Course, CourseType } from "@/models/course";
 import { Spinner } from "@nextui-org/react";
 import Head from "next/head";
 import React from "react";
 import useSWR from "swr";
-
-export const courseTypeLabels: { [key in CourseType]: string } = {
-  LEGACY: "Legacy",
-  V1: "Version 1",
-  V2: "Version 2",
-  V3: "Version 3",
-};
 
 function CourseList(props: { courses: Course[] }) {
   const { courses } = props;
