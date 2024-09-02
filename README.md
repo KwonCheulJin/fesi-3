@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/github/KwonCheulJin/fesi-3/graph/badge.svg?token=BYRGRHK8NA)](https://codecov.io/github/KwonCheulJin/fesi-3)
+
 # Codeit - 실습(Pocket 클론 / Front end Test)
 
 ## Tech Requirement (Tech Stack)
