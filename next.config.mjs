@@ -9,6 +9,7 @@ export default withSentryConfig(nextConfig, {
   org: "codeit-2",
   project: "codeit-nextjs",
 
+  authToken: process.env.SENTRY_AUTH_TOKEN,
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,
 
