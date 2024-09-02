@@ -7,6 +7,8 @@
 - Headless UI
 - Framer Motion
 - Next UI
+- Sentry
+- Codecov
 
 ## 참고사항
 
