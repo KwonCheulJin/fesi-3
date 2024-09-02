@@ -1,4 +1,4 @@
-import { customRender } from "@/__tests__/test-helper.test";
+import { customRender } from "@/__tests__/test-helper";
 import Home from "@/app/courses/page";
 import { courses } from "@/fixtures/courses";
 import { screen, waitFor } from "@testing-library/dom";
