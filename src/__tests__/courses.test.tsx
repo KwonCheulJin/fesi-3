@@ -1,6 +1,6 @@
-import { customRender } from "@/__tests__/test-helper";
 import Home from "@/app/courses/page";
 import { courses } from "@/fixtures/courses";
+import { customRender } from "@/lib/test-helper";
 import { screen, waitFor } from "@testing-library/dom";
 import userEvent from "@testing-library/user-event";
 import { rest } from "msw";
