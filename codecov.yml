@@ -19,15 +19,3 @@ coverage:
         default:
           target: 70%      # 새로운 PR에 대해 70% 이상의 커버리지가 요구됨
           threshold: 1%
-
-comment:
-  layout: "header, diff, files"   # PR에 추가되는 주석의 형식 (헤더, 차이점, 파일)
-  require_changes: yes            # 변경된 파일에만 주석을 달도록 설정
-
-parsers:
-  gcov:
-    branch_detection:
-      conditional: yes
-      loop: yes
-      method: yes
-      macro: no
