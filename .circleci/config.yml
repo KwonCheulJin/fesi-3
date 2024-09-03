@@ -3,24 +3,31 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
 
+jobs:
+  build:
+    docker:
+      - image: circleci/node:20 # Node.js 버전 20 사용
+    steps:
+      - checkout
+      - run:
+          name: Install Node.js
+          command: nvm install 20
+      - run:
+          name: Use Node.js
+          command: nvm use 20
+      - run:
+          name: Install Yarn
+          command: npm install --force -g yarn
+      - run:
+          name: Yarn Install
+          command: yarn install --frozen-lockfile
+
 workflows:
   build_and_test:
     jobs:
-      steps:
-        - checkout
-        - run:
-            name: Install Node.js
-            command: nvm install 20
-        - run:
-            name: Use Node.js
-            command: nvm use 20
-        - run:
-            name: Install Yarn
-            command: npm install --force -g yarn
-        - run:
-            name: Yarn Install
-            command: yarn --frozen-lockfile
-        - cypress/run:
-            requires:
-            package-manager: yarn
-            start-command: yarn start
+      - build
+      - cypress/run:
+          requires:
+            - build
+          package-manager: yarn
+          start-command: yarn start
