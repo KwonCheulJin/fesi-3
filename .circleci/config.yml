@@ -2,17 +2,27 @@ version: 2.1
 
 orbs:
   cypress: cypress-io/cypress@3
-executors:
-  default:
+
+jobs:
+  setting_and_cypress-test:
     docker:
-      - image: cimg/node:20.10.0-browsers
-    parameters:
-      node-version:
-        default: 20.10.0
-        type: string
+      - image: cimg/node:20.10.0-browsers # Node.js 버전 20 사용
+    steps:
+      - checkout
+      - run:
+          name: Confirm Node.js version
+          command: node -v
+      - run:
+          name: Install Yarn
+          command: npm install --force -g yarn
+      - run:
+          name: Yarn Install
+          command: yarn --frozen-lockfile
+      - run:
+          name: Cypress Headless Tests
+          command: yarn cy:run
+
 workflows:
-  test:
+  setting_and_cypress-test:
     jobs:
-      - cypress/run:
-          package-manager: "yarn"
-          start-command: "yarn ci:run"
+      - setting_and_cypress-test
