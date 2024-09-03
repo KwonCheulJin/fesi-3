@@ -18,13 +18,11 @@ jobs:
       - run:
           name: Yarn Install
           command: yarn --frozen-lockfile
+      - run:
+          name: Run cypress
+          command: yarn start
 
 workflows:
   build_and_test:
     jobs:
       - build
-      - cypress/run:
-          requires:
-            - build
-          package-manager: yarn
-          start-command: yarn start
