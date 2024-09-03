@@ -1,0 +1,33 @@
+# codecov.yml
+
+# Default configuration for all repositories
+coverage:
+  precision: 2             # 커버리지 퍼센트의 소수점 이하 자릿수 (기본값: 2)
+  round: down              # 커버리지를 내림으로 반올림 (기본값: down)
+  range: "70...100"        # 커버리지 기준 범위 (70% 이하: 빨간색, 100%: 초록색)
+
+# 특정 파일이나 디렉토리에 대한 엄격한 커버리지 규칙 적용
+coverage:
+  status:
+    project:
+      default:
+        target: 80%        # 전체 프로젝트의 목표 커버리지 80%
+        threshold: 1%      # 목표 대비 허용되는 차이
+        paths:
+          - "src/*"        # 특정 경로에 대해 이 목표를 적용
+      patch:
+        default:
+          target: 70%      # 새로운 PR에 대해 70% 이상의 커버리지가 요구됨
+          threshold: 1%
+
+comment:
+  layout: "header, diff, files"   # PR에 추가되는 주석의 형식 (헤더, 차이점, 파일)
+  require_changes: yes            # 변경된 파일에만 주석을 달도록 설정
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: yes
+      macro: no
