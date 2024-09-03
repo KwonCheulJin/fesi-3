@@ -6,20 +6,21 @@ orbs:
 workflows:
   build_and_test:
     jobs:
-      - checkout
-      - run:
-          name: Install Node.js
-          command: nvm install 20
-      - run:
-          name: Use Node.js
-          command: nvm use 20
-      - run:
-          name: Install Yarn
-          command: npm install --force -g yarn
-      - run:
-          name: Yarn Install
-          command: yarn --frozen-lockfile
-      - cypress/run:
-          requires:
-          package-manager: yarn
-          start-command: yarn start
+      steps:
+        - checkout
+        - run:
+            name: Install Node.js
+            command: nvm install 20
+        - run:
+            name: Use Node.js
+            command: nvm use 20
+        - run:
+            name: Install Yarn
+            command: npm install --force -g yarn
+        - run:
+            name: Yarn Install
+            command: yarn --frozen-lockfile
+        - cypress/run:
+            requires:
+            package-manager: yarn
+            start-command: yarn start
