@@ -8,6 +8,15 @@ jobs:
     docker:
       - image: cimg/node:20.10.0-browsers
 
+    steps:
+      - checkout
+      - run:
+          name: Install Yarn
+          command: npm install --force -g yarn
+      - run:
+          name: Yarn Install
+          command: yarn install
+
 workflows:
   version: 2
   build_and_test:
