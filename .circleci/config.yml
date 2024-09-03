@@ -19,11 +19,8 @@ jobs:
           name: Yarn Install
           command: yarn --frozen-lockfile
       - run:
-          name: Next build
-          command: yarn build
-      - run:
-          name: Run cypress
-          command: yarn start
+          name: Cypress Headless Tests
+          command: yarn cy:run
 
 workflows:
   build_and_test:
