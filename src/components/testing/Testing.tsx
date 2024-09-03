@@ -1,8 +1,6 @@
 "use client";
-import Counter from "@/components/testing/Counter";
-import Login from "@/components/testing/Login";
-import MyInput from "@/components/testing/MyInput";
-import UpperInput from "@/components/testing/UpperInput";
+
+import Link from "next/link";
 
 export default function Testing() {
   return (
@@ -11,7 +9,7 @@ export default function Testing() {
       className="bg-white py-20 sm:py-32 lg:pb-32 xl:pb-36"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <UpperInput />
+        {/* <UpperInput />
         <MyInput
           isClearable
           type="email"
@@ -23,7 +21,9 @@ export default function Testing() {
           className="max-w-xs"
         />
         <Counter />
-        <Login />
+        <Login /> */}
+        <h3>Get started by</h3>
+        <Link href="/docs">Docs</Link>
       </div>
     </section>
   );
