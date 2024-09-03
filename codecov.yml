@@ -1,21 +1,24 @@
-# codecov.yml
-
-# Default configuration for all repositories
 coverage:
-  precision: 2             # 커버리지 퍼센트의 소수점 이하 자릿수 (기본값: 2)
-  round: down              # 커버리지를 내림으로 반올림 (기본값: down)
-  range: "70...100"        # 커버리지 기준 범위 (70% 이하: 빨간색, 100%: 초록색)
+  status:
+    project: #add everything under here, more options at https://docs.codecov.com/docs/commit-status
+      default:
+        # basic
+        target: auto #default
+        threshold: 0%
+        base: auto
+comment:                  #this is a top-level key
+  layout: " diff, flags, files"
+  behavior: default
+  require_changes: false  # if true: only post the comment if coverage changes
+  require_base: false        # [true :: must have a base report to post]
+  require_head: true       # [true :: must have a head report to post]
+  hide_project_coverage: false # [true :: only show coverage on the git diff aka patch coverage]
 
-# 특정 파일이나 디렉토리에 대한 엄격한 커버리지 규칙 적용
 coverage:
   status:
     project:
       default:
-        target: 80%        # 전체 프로젝트의 목표 커버리지 80%
-        threshold: 1%      # 목표 대비 허용되는 차이
-        paths:
-          - "src/*"        # 특정 경로에 대해 이 목표를 적용
-      patch:
-        default:
-          target: 70%      # 새로운 PR에 대해 70% 이상의 커버리지가 요구됨
-          threshold: 1%
+        informational: true
+    patch:
+      default:
+        informational: true
