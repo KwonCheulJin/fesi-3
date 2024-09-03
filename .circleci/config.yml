@@ -2,8 +2,27 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
 workflows:
-  test:
-    jobs:
-      - cypress/run:
-          package-manager: "yarn"
-          start-command: "yarn start"
+  jobs:
+    build:
+      docker:
+        - image: cimg/node:20.10.0-browsers # Node.js 버전 20 사용
+      steps:
+        - checkout
+        - run:
+            name: Install Yarn
+            command: npm install --force -g yarn
+        - run:
+            name: Yarn Install
+            command: yarn install --frozen-lockfile
+    test:
+      steps:
+        - checkout
+        - run:
+            name: Install node 20
+            command: nvm install 20.10.0
+        - run:
+            name: Use node 20
+            command: nvm use 20.10.0
+        - cypress/run:
+            package-manager: "yarn"
+            start-command: "yarn start"
