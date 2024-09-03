@@ -4,7 +4,7 @@ orbs:
   cypress: cypress-io/cypress@3
 
 jobs:
-  build:
+  setting_and_cypress-test:
     docker:
       - image: cimg/node:20.10.0-browsers # Node.js 버전 20 사용
     steps:
@@ -23,6 +23,6 @@ jobs:
           command: yarn cy:run
 
 workflows:
-  build_and_test:
+  setting_and_cypress-test:
     jobs:
-      - build
+      - setting_and_cypress-test
