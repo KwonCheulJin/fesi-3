@@ -15,7 +15,7 @@ jobs:
           command: npm install --force -g yarn
       - run:
           name: Yarn Install
-          command: yarn install
+          command: yarn --frozen-lockfile
 
 workflows:
   version: 2
