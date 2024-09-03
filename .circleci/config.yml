@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:20 # Node.js 버전 20 사용
+      - image: cimg/node:20 # Node.js 버전 20 사용
     steps:
       - checkout
       - run:
