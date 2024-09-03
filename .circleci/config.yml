@@ -6,7 +6,8 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/node:18.17.0 # Node.js 버전을 올바르게 설정
+      - image: circleci/node:20.10.0
+
     steps:
       - checkout
       - run:
